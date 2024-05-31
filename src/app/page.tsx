@@ -7,7 +7,7 @@ export default function Home() {
       <div className=" p-8 rounded-lg w-[800px] mt-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl  text-gray-900 mb-12">
           <span className="font-bold">Zynapse</span> -{" "}
-          <span className="italic">it's coming</span>
+          <span className="italic">it&apos;s coming</span>
         </h1>
         <div className="text-left mt-28 rounded-lg shadow-sm italic flex gap-x-10">
           <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-relaxed">
