@@ -1,41 +1,32 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+import RegisterForm from "./components/RegisterForm";
+import FeatureList from "./components/FeatureList";
+import LoginForm from "./components/LoginForm";
+import FormDialog, { ButtonType } from "./components/FormDialog";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex justify-center p-10 bg-gray-100">
-      <div className=" p-8 rounded-lg w-[800px] mt-10">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl  text-gray-900 mb-12">
-          <span className="font-bold">Zynapse</span> -{" "}
-          <span className="italic">it&apos;s coming</span>
-        </h1>
-        <div className="text-left mt-28 rounded-lg shadow-sm italic flex gap-x-10">
-          <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-relaxed">
-            What you think, you become.
-            <span className="block mt-4 text-gray-600">
-              What you feel, you attract.
-            </span>
-            <span className="block mt-4 text-gray-600">
-              What you imagine, you create.
-            </span>
-            <span className="block mt-4 text-gray-600">
-              What you store, you retrieve.
-            </span>
-          </p>
-          <div className="opacity-[0.6]">
-            <Image
-              src={"brain-line-icon.svg"}
-              alt="brain"
-              width={200}
-              height={200}
+    <main className="min-h-screen flex justify-start p-10 bg-gray-900 gap-x-10">
+      <div className=" text-white py-20 flex-grow">
+        <div className="container mx-auto text-center space-y-20">
+          <div>
+            <h1 className="text-8xl font-bold">Zynapse</h1>
+            <p className="text-3xl mt-4">Think Outside Your Skull</p>
+          </div>
+          <div className="">
+            <FormDialog
+              buttonType={ButtonType.Secondary}
+              buttonText="Get Started"
+              RenderForm={RegisterForm}
+            />
+            <FormDialog
+              buttonType={ButtonType.Default}
+              buttonText="Login"
+              RenderForm={LoginForm}
             />
           </div>
+          <FeatureList />
         </div>
-        <Link href={"/dashboard"} className="">
-          <button className=" mt-10 bg-black text-white p-2 rounded">
-            Dashboard
-          </button>
-        </Link>
       </div>
     </main>
   );
